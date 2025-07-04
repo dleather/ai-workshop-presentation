@@ -1,21 +1,55 @@
 ---
 marp: true
-theme: default
+paginate: false
+theme: uncover
 style: |
+  /* Force continuous scroll */
+  @page {
+    size: 1280px 50000px;
+  }
+  
   section {
     height: auto !important;
-    min-height: 100vh;
+    min-height: 100vh !important;
+    max-height: none !important;
     overflow: visible !important;
-    page-break-after: avoid;
+    display: block !important;
+    page-break-after: auto !important;
+    padding: 60px !important;
+    position: relative !important;
+  }
+  
+  section[data-marpit-pagination] {
+    display: none !important;
+  }
+  
+  /* Remove pagination controls */
+  section::after {
+    display: none !important;
   }
   
   .marpit {
-    overflow: auto !important;
     height: auto !important;
+    overflow: visible !important;
   }
-paginate: true
-size: 16:9
-
+  
+  /* Remove slide numbers */
+  section[data-marpit-pagination]::after {
+    display: none !important;
+  }
+  
+  /* Ensure tables and content don't overflow */
+  table {
+    max-width: 100%;
+    font-size: 0.9em;
+  }
+  
+  /* Visual separator between sections */
+  section + section {
+    border-top: 3px solid #e0e0e0;
+    margin-top: 40px;
+    padding-top: 80px !important;
+  }
 ---
 
 # AI in Action: A 60-Minute Workshop on ChatGPT
