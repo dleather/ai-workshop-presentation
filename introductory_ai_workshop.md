@@ -1,8 +1,21 @@
 ---
 marp: true
 theme: default
-size: 16:9
+style: |
+  section {
+    height: auto !important;
+    min-height: 100vh;
+    overflow: visible !important;
+    page-break-after: avoid;
+  }
+  
+  .marpit {
+    overflow: auto !important;
+    height: auto !important;
+  }
 paginate: true
+size: 16:9
+
 ---
 
 # AI in Action: A 60-Minute Workshop on ChatGPT
